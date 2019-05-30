@@ -1,0 +1,22 @@
+{% block content %}
+    <h1>Login</h1>
+    <form action="" method="post" novalidate>
+
+        {% for field, errors in form.errors.items() %}
+        <div class="alert alert-error" style = "color: red">
+            Check creds & fill all fields
+        </div>
+        {% endfor %}
+
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href = "signup">Click here to sign up if you are a new user</a>
+{% endblock %}

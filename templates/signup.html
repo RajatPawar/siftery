@@ -1,0 +1,27 @@
+{% block content %}
+    <h1>Sign up</h1>
+    <form action="" method="post" novalidate>
+        {{ form.hidden_tag() }}
+
+        {% if form.errors %}
+        <div class="alert alert-error" style = "color: red">
+            Check if password is above 6 chars & fill all fields
+        </div>
+        {% endif %}
+
+        <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </p>
+        <p>
+            {{ form.interests.label }}<br>
+            {{ form.interests(size=32) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    <a href = "login">Click here to login if you are an existing user</a>
+{% endblock %}
